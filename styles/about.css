@@ -1,0 +1,41 @@
+/** ***** SECTION - ABOUT ***** **/
+.section_about{
+    display: flex;
+    width: 100%;
+    padding:0 10vw;
+    justify-content: space-between;
+}
+.section_about .about_image{
+    width:28vw;
+    text-align: center;
+}
+.section_about .about_image img{
+    width:100%;
+    border-radius:3px;
+}
+.section_about .about_image h2{
+    font-size: var(--font-size-6);
+}
+.section_about .about_image h3{
+    font-size: var(--font-size-7);
+}
+.section_about .about_text{
+    width:48vw;
+    text-align: justify;
+    font-size: var(--font-size-5);
+}
+
+@media only screen and (max-width: 600px) {
+    .section_about{
+        width:100%;
+        padding:0 5vw;
+        flex-direction: column-reverse;
+    }
+    .section_about .about_text{
+        width:100%;
+    }
+    .section_about .about_image{
+        width:100%;
+        margin-top:10vh;
+    }
+}

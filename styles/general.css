@@ -1,0 +1,134 @@
+@font-face { font-family: 'italiano'; src: url('fonts/Italianno-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'oswald'; src: url('fonts/Oswald-VariableFont_wght.ttf') format('truetype'); }
+
+*{
+    box-sizing: border-box;
+    font-family: 'oswald';
+}
+html,
+body{
+    width:100%;
+    min-height:100%;
+    padding:0;
+    margin:0;
+    overflow-x: hidden;
+}
+.bkg_opacity{
+    position: fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: #0000009c;
+    z-index:-1;
+}
+
+/** ****** HEADER ***** **/
+header{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding:0 0 10vh 0;
+    background-image: url(../images/woodbkg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header:after{
+    content:'';
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: #0000009c;
+    z-index:0;
+}
+header div{
+    z-index: 10;
+}
+header .bussiness_name{
+    width:50%;
+    text-align: center;
+}
+header .bussiness_name img{
+    border-radius: 50%;
+    max-width:100%;
+}
+header .bussiness_description{
+    width:50%;
+    text-align: center;
+    font-family: 'italiano';
+    font-weight:normal;
+    color: #FFFFFF;
+    font-size: 3vw;
+    text-shadow: 0 0 30px #000;
+    padding:2vmax 0;
+    border-top: solid 1px #FFFFFF;
+    border-bottom: solid 1px #FFFFFF;
+}
+header .menu{
+    display: flex;
+    flex-wrap: wrap;
+    width:50%;
+    justify-content: space-between;
+    margin-top:2vmax;
+}
+header .menu a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1.7vw;
+    transition:.9s;
+}
+header .menu a:hover{
+    text-shadow: 0 0 20px #f40808;
+}
+header .menu div{
+    width:100%;
+    margin-top:2vmax;
+    text-align: center;
+}
+header .menu a img{
+    width:3vmax;
+}
+header .menu a img.instagram_icon{
+    border:none;
+    background-color: #000000;
+    border-radius:50%;
+    margin-left:3vw;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    header{
+        padding:0;
+    }
+    header .bussiness_description{
+        width:90%;
+        font-size: 10vw;
+    }
+    header .menu{
+        width:90%;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        margin-top:0;
+    }
+    header .menu a{
+        font-size: 4vh;
+        margin-top: 4vh;
+    }
+    header .menu div{
+        margin-top:10vh;
+    }
+    header .menu a img {
+        width: 10vw;
+    }
+    header .menu a img.instagram_icon{
+        margin-left: 10vw;
+    }
+}

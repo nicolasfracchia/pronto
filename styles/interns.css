@@ -1,0 +1,227 @@
+@font-face { font-family: 'italiano'; src: url('fonts/Italianno-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'oswald'; src: url('fonts/Oswald-VariableFont_wght.ttf') format('truetype'); }
+:root{
+    --color-red: #bd0100;
+    --color-yellow: #f9bb10;
+    --font-size-1: 5vmax;
+    --font-size-2: 3vmax;
+    --font-size-3: 2vmax;
+    --font-size-4: 1.7vmax;
+    --font-size-5: 1.5vmax;
+    --font-size-6: 1.3vmax;
+    --font-size-7: 1vmax;
+    --font-size-8: 0.9vmax;
+    --font-size-9: 0.8vmax;
+    --font-size-10: 0.7vmax;
+    --col-size-1: 80vw;
+    --col-size-1-side: 75vw;
+    --col-size-2: 38vw;
+    --col-size-3: 25vw;
+    --col-size-4: 17vw;
+    --col-size-4-side: 16.5vw;
+    --body-top: 10vw;
+}
+*{
+    box-sizing: border-box;
+    font-family: 'oswald';
+    letter-spacing: 1px;
+}
+html,
+body{
+    width:100%;
+    min-height:100%;
+    padding:0;
+    margin:0;
+    overflow-x: hidden;
+}
+.bkg_opacity{
+    position: fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: #0000009c;
+    z-index:-1;
+}
+body{
+    padding-top:var(--body-top);
+}
+
+/** ***** SCROLL BAR ***** **/
+    /* Firefox */
+    * {
+        scrollbar-width: auto;
+        scrollbar-color: #000000 #8c8c8c;
+    }
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: #8c8c8c;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: #000000;
+        border-radius: 10px;
+        border: 0px outset #ffffff;
+    }
+
+/** ****** HEADER ***** **/
+header{
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    padding:1vw 10vw;
+    top:0;
+    background-image: url(../images/woodbkg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 10px 10px #CCCCCC;
+    z-index: 10;
+}
+header .show_menu{
+    display: none;
+}
+header .cont_logo{
+    display: flex;
+    text-decoration: none;
+}
+header .cont_logo .logo{
+    padding-right:1vw;
+}
+header .cont_logo .logo img{
+    width: 4vw;
+    border-radius: 50%;
+}
+header .cont_logo .logo_text .bussiness_name{
+    font-family: 'italiano';
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 5vw;
+    text-shadow: 0 0 30px #000;
+}
+header .cont_logo .logo_text{
+    display: flex;
+    align-items: center;
+}
+header .cont_logo .logo_text .bussiness_description{
+    display: flex;
+    align-items: center;
+    font-family: 'italiano';
+    font-weight:normal;
+    color: #FFFFFF;
+    font-size: var(--font-size-3);
+    text-shadow: 0 0 30px #000;
+    border-top: solid 1px #FFFFFF;
+    border-bottom: solid 1px #FFFFFF;
+    letter-spacing: 2px;
+}
+header .menu{
+    display: flex;
+    width:60%;
+    justify-content: space-between;
+}
+header .menu a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: var(--font-size-4);
+    transition:.3s;
+}
+header .menu a.selected,
+header .menu a:hover{
+    color:var(--color-yellow);
+}
+header .menu a img{
+    width:3vmax;
+}
+header .menu a img.instagram_icon{
+    border:none;
+    background-color: #000000;
+    border-radius:50%;
+    margin-left:1vw;
+}
+
+@media only screen and (max-width: 600px) {
+    :root{
+        --font-size-1: 10vmax;
+        --font-size-2: 6vmax;
+        --font-size-3: 4vmax;
+        --font-size-4: 3.4vmax;
+        --font-size-5: 3vmax; /* CORREGIDO POR TXT DE ABOUT US */
+        --font-size-6: 2.6vmax;
+        --font-size-7: 2vmax;
+        --font-size-8: 1.8vmax;
+        --font-size-9: 1.6vmax;
+        --font-size-10: 1.4vmax;
+        --body-top: 10vh;
+    }
+    header{
+        flex-wrap:wrap;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding:1vh 5vw;
+        height: 7vh;
+        transition:0.3s;
+        z-index: 100;
+        overflow: hidden;
+    }
+    header #show_menu{
+        position: absolute;
+        display: block;
+        width: 4vh;
+        height: 4vh;
+        background-image: url(../images/menu.svg);
+        background-size: 3vh;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        top: 1.5vh;
+        right: 5vw;
+        z-index: 100;
+        transition: .3s;
+    }
+    header.header_menu_on #show_menu{
+        background-image: url(../images/close.svg);
+    }
+    header .cont_logo{
+        width:100%;
+    }
+    header .cont_logo .logo img{
+        width:auto;
+        height:5vh;
+    }
+    header .cont_logo .logo_text .bussiness_description{
+        font-size: var(--font-size-7);
+    }
+    header.header_menu_on{
+        height:100vh;
+    }
+    header .menu{
+        width:100%;
+        flex-direction: column;
+        margin-top:5vh;
+    }
+    header .menu a{
+        text-align: center;
+        font-size: var(--font-size-3);
+        margin-top:3vh;
+    }
+    header .menu div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top:5vh;
+    }
+    header .menu a img{
+        width:auto;
+        height:5vh;
+        margin:0 15vw;
+    }
+}

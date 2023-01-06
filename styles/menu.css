@@ -1,0 +1,134 @@
+.section_menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: var(--col-size-1);
+    margin:0 10vw;
+}
+.section_menu .col_2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: var(--col-size-2);
+}
+.section_menu .col_1{
+    margin-top:1vw;
+    width: var(--col-size-1);
+}
+.section_menu .list_container{
+    position:relative;
+    width:38vw;
+    padding:1vw;
+    background-size: cover;
+    background-position: center center;
+}
+.section_menu .list_container_pizza{background-image:url(../images/menu/pizza.jpg);}
+.section_menu .list_container_pasta{background-image:url(../images/menu/pasta.png);}
+.section_menu .list_container_salads{background-image:url(../images/menu/salad.jpg);}
+.section_menu .list_container_pagnota{background-image:url(../images/menu/pagnota.jpg);}
+.section_menu .list_container_combos{background-image:url(../images/menu/discount.png);}
+.section_menu .list_container:before{
+    content: '';
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color: var(--color-yellow);
+    background-size: cover;
+    z-index: 0;
+    opacity: 0.8;
+}
+.section_menu .col_1 .list_container{
+    width:80vw;
+}
+.section_menu .col_1 .list_container ul{
+    width:38vw;
+    margin:0 auto;
+}
+.section_menu .list_container h1,
+.section_menu .list_container h2,
+.section_menu .list_container .pagnota_description,
+.section_menu .list_container .pasta_price{
+    position: relative;
+    font-family: 'oswald';
+    margin:0;
+    padding:0;
+    text-align: center;
+    font-size: var(--font-size-3);
+    font-weight: bold;
+    letter-spacing: 1px;
+    color:var(--color-red);
+    z-index: 1;
+}
+.section_menu .list_container .pagnota_description{
+    font-size: var(--font-size-3);
+}
+.section_menu .list_container .pasta_price{
+    font-size:2vw;
+    color:#000000;
+    padding-top:1vw;
+}
+.section_menu .list_container ul{
+    position: relative;
+    margin:0;
+    padding:0;
+    list-style: none;
+    z-index: 1;
+}
+.section_menu .list_container ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1vw 0;
+}
+
+.section_menu .list_container:first-of-type ul li:last-of-type{
+    padding-bottom:0;
+}
+.section_menu .list_container ul li div:last-of-type{
+    padding-left:2vw;
+    font-weight: bold;
+    font-size: var(--font-size-6);
+}
+.section_menu .list_container ul li div h3{
+    margin:0;
+    padding:0;
+    font-size: var(--font-size-6);
+}
+.section_menu .list_container ul li div label{
+    font-size: var(--font-size-7);
+}
+
+@media only screen and (max-width: 600px) {
+    .section_menu{
+        width: 100%;
+        padding:0 5vw;
+        flex-direction: column;
+        margin:0;
+    }
+    .section_menu .col_1,
+    .section_menu .col_2,
+    .section_menu .list_container,
+    .section_menu .col_1 .list_container,
+    .section_menu .col_1 .list_container ul{
+        width:100%;
+    }
+    .section_menu .col_1 .list_container,
+    .section_menu .col_2 .list_container{
+        margin-bottom:5vh;
+        padding:2vh 0;
+    }
+    .section_menu .list_container .pagnota_description{
+        font-size: var(--font-size-7);
+    }
+    .section_menu .list_container .pasta_price{
+        font-size: var(--font-size-5);
+        margin-top:2vh;
+        font-weight: bold;
+    }
+    .section_menu .list_container ul li,
+    .section_menu .list_container:first-of-type ul li:last-of-type{
+        padding: 2vh 2vw;
+    }
+}
